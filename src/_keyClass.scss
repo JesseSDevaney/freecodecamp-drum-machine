@@ -1,0 +1,33 @@
+$colors: (
+  rgba(0, 71, 186, 0.356),
+  rgba(0, 164, 186, 0.356),
+  rgba(0, 186, 115, 0.356),
+  rgba(0, 186, 40, 0.356),
+  rgba(235, 217, 63, 0.356),
+  rgba(223, 122, 41, 0.356),
+  rgba(118, 0, 186, 0.356),
+  rgba(149, 0, 186, 0.356),
+  rgba(186, 0, 108, 0.356)
+);
+
+$keys: ("Q", "W", "E", "A", "S", "D", "Z", "X", "C");
+
+@for $i from 1 through 9 {
+  .#{nth($keys, $i)}Class {
+    background-color: nth($colors, $i);
+  }
+
+  .#{nth($keys, $i)}ClassLight {
+    animation-name: #{nth($keys, $i)}Light;
+    animation-duration: 1s;
+  }
+
+  @keyframes #{nth($keys, $i)}Light {
+    0% {
+      background-color: nth($colors, $i);
+    }
+    100% {
+      background-color: white;
+    }
+  }
+}

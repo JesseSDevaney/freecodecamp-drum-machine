@@ -1,0 +1,48 @@
+// color mapping for background when corresponding key is pressed
+@use "keyClass"; 
+
+.stage {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #drum-machine {
+        width: 95%;
+        max-width: 900px;
+        opacity: 0.8;
+        display: flex;
+        flex-direction: column;
+
+        #display {
+            width: 100%;
+            height: 20vh;
+            border: 1px solid black;
+        }
+
+        #drum-pad-container {
+            width: 100%;
+            height: 70vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            .drum-pad{
+                position: relative;
+                height: 100%;
+
+                .clip {
+                    display: none;
+                }
+
+                .key {
+                    position: absolute;
+                    right: 0.8rem;
+                    bottom: 0.8rem;
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
